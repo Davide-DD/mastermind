@@ -1,5 +1,5 @@
 # Mastermind
-FPGA implementation of the popular logic game using VHDL and Altera DE1. It stands by the [original rules](https://en.wikipedia.org/wiki/Mastermind_(board_game)) of this game, except for the secret pattern of four code pegs, that can contain duplicates. For this project, we used Quartus 13.0sp1, for it's the last version supporting our board Altera DE1, who is mounting a Cyclone II FPGA. 
+FPGA implementation of the popular logic game using VHDL and Altera DE1. It stands by the [original rules](https://en.wikipedia.org/wiki/Mastermind_(board_game)) of this game, except for the secret pattern of four code pegs, that can contain duplicates. For this project, we used Quartus 13.0sp1, for it's the last version supporting our board Altera DE1, who is mounting a Cyclone II FPGA. You can download this project and load it directly into your Quartus IDE, as there's already the main project file inside this repository (**Mastermind.qpf**).
 
 ## How it works
 
@@ -14,7 +14,7 @@ It's represented by a single file, **controller.vhd**, that contains a process h
 It's represented by a single file, **view.vhd**, which contains, among other things, a finite state machine describing the current part of the scene which is being written to the SRAM (see next section for this).
 
 ### VGA communications
-It's represented by a single master file, **vga_framebuffer**, which instantiates many other modules inside, such as **vga_timing** or **text_controller**, to appropriately manage VGA communications with displays and SRAM read/write access. This because, in particular, for this project, we chose to use a framebuffer (represented by the board's SRAM), to comfortably write (in terms of timing) the next scene to be rendered on screen while outputting the current one. If you're not familiar with VGA in such low-level terms and you're interested in knowing more, we suggest you to read our files inside **docs** folder or this [webpage](https://eewiki.net/pages/viewpage.action?pageId=15925278)
+It's represented by a single master file, **vga_framebuffer**, which instantiates many other modules inside, such as **vga_timing** or **text_controller**, to appropriately manage VGA communications with displays and SRAM read/write access. This because, in particular, for this project, we chose to use a framebuffer (represented by the board's SRAM), to comfortably write (in terms of timing) the next scene to be rendered on screen while outputting the current one. If you're not familiar with VGA in such low-level terms and you're interested in knowing more, we suggest you to read our files inside **docs** folder or these webpages (https://eewiki.net/pages/viewpage.action?pageId=15925278, https://en.wikipedia.org/wiki/Framebuffer).
 
 ## Docs
 
